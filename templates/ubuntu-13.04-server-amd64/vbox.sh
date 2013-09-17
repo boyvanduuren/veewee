@@ -1,3 +1,6 @@
+# Check wether we're running on a virtualbox VM, if not, we exit with 0
+dmidecode | grep VirtualBox &> /dev/null || exit 0
+
 # Without libdbus virtualbox would not start automatically after compile
 apt-get -y install --no-install-recommends libdbus-1-3
 
